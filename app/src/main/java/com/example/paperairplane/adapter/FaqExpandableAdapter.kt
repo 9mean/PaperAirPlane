@@ -1,5 +1,6 @@
-package com.example.paperairplane
+package com.example.paperairplane.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,15 +8,31 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.paperairplane.R
 import com.example.paperairplane.data.FAQ
 import com.example.paperairplane.util.ToggleAnimation
-import org.w3c.dom.Text
 
 class FaqExpandableAdapter(
 private val faqList: List<FAQ>
 ) : RecyclerView.Adapter<FaqExpandableAdapter.MyViewHolder>() {
 
-    class MyViewHolder(
+
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+
+        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_faq_list, parent, false))
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.bind(faqList[position])
+        Log.d("TAG", "onBindViewHolder: ${faqList[position]}")
+    }
+
+    override fun getItemCount(): Int {
+        return faqList.size
+    }
+    inner class MyViewHolder(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
         fun bind(faq: FAQ) {
@@ -43,18 +60,4 @@ private val faqList: List<FAQ>
             return isExpanded
         }
     }
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_faq_list, parent, false))
-    }
-
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(faqList[position])
-    }
-
-    override fun getItemCount(): Int {
-        return faqList.size
-    }
-
 }

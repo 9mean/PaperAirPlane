@@ -4,13 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/activity_add_food.xml" value="0.16" />
+        <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/activity_detail_food.xml" value="0.136" />
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/activity_faq.xml" value="0.152" />
+        <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/activity_food.xml" value="0.144" />
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/activity_map.xml" value="0.2" />
+        <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/activity_review.xml" value="0.176" />
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/activity_street.xml" value="0.264" />
+        <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/detail_food.xml" value="0.264" />
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/dialog_main_option.xml" value="0.136" />
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/fragment_gwangae.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/item_faq_list.xml" value="0.264" />
+        <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/item_food_list.xml" value="0.2" />
+        <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/item_review_list.xml" value="0.264" />
+        <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/itemt_food_list.xml" value="0.12083333333333333" />
         <entry key="..\:/Users/kanggm/hakoton/app/src/main/res/layout/school_list.xml" value="0.128125" />
       </map>
     </option>

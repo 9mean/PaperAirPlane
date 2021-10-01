@@ -2,15 +2,16 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdk 30
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.example.paperairplane"
-        minSdk 26
-        targetSdk 30
+        minSdkVersion 23
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -30,9 +31,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding true
     }
+
 }
 
 dependencies {
@@ -42,7 +44,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
@@ -65,4 +67,28 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.2'
     implementation 'com.google.firebase:firebase-firestore:23.0.3'
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    def lifecycle_version = "2.3.1"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    //kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+//Lifecycle ktx
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    //glide
+    // Image Loading Library
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    //이미지자르기
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    //새로고침뷰
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    //로티
+    implementation 'com.airbnb.android:lottie:4.1.0'
+    //카드뷰
+    implementation 'androidx.cardview:cardview:1.0.0'
+
 }

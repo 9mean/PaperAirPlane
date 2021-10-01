@@ -11,7 +11,12 @@ import android.net.Uri
 import android.os.Handler
 import android.util.Log
 import android.util.Pair
+import android.view.View
+import android.widget.LinearLayout
 import com.example.paperairplane.`interface`.MainOptionClickInterface
+import com.example.paperairplane.adapter.MainAdapter
+import com.example.paperairplane.util.BildingConstant
+import com.example.paperairplane.util.ToggleAnimation
 import com.jackandphantom.carouselrecyclerview.CarouselLayoutManager
 
 import java.io.IOException
@@ -23,17 +28,19 @@ import java.io.InputStream
 class MainActivity : AppCompatActivity(), MainOptionClickInterface{
     private var view: VrPanoramaView? = null
     private var flag2=0
+    private var toogleFlag=false
+    private var currentPosition=0
     private lateinit var mainBinding: ActivityMainBinding
     var sampleImages = intArrayOf(
-        R.drawable.aicenter,R.drawable.chungmu,R.drawable.gwanggae
+        R.drawable.frontdoor,R.drawable.front,R.drawable.aicenter,R.drawable.chungmu,R.drawable.gwanggae,R.drawable.zipheon,R.drawable.zeokdoor,R.drawable.ujeong,R.drawable.sejonggwan,R.drawable.moza,R.drawable.hakjeong,R.drawable.gunja,R.drawable.eziheon,R.drawable.edang,R.drawable.dasan,R.drawable.backdoor,R.drawable.gisuk,
     )
     var converSampleImages = arrayListOf(
-        "aicenter.jpg","chungmu.jpg","gwanggae.jpg"
+        "frontdoor.jpg","front.jpg","aicenter.jpg","chungmu.jpg","gwanggae.jpg","zipheon.jpg","zeokdoor.jpg","ujeong.jpg","sejonggwan.jpg","moza.jpg","hakjeong.jpg","gunja.jpg","eziheon.jpg","eongduk.jpg","edang.jpg","dasan.jpg","backdoor.jpg","gisuk.jpg"
     )
     val title= arrayListOf(
-        "AI융합센터","영실관/충무관/율곡관","광개토관"
+        "정문","학생회관/대양홀","AI융합센터","영실관/충무관/율곡관","광개토관","집현관","쪽문","우정당","세종관","모짜르트홀","학술정보원","군자관","애지헌","용덕관","이당관","다산관","후문","기숙사"
     )
-    private var adapter=MainAdapter(this,sampleImages,title)
+    private var adapter= MainAdapter(this,sampleImages,title)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding= ActivityMainBinding.inflate(layoutInflater)
@@ -47,13 +54,78 @@ class MainActivity : AppCompatActivity(), MainOptionClickInterface{
         val currentlyCenterPosition = carouselRecyclerview.getSelectedPosition()
         carouselRecyclerview.setItemSelectListener(object : CarouselLayoutManager.OnSelected {
             override fun onItemSelected(position: Int) {
+                toogleFlag=false
+                currentPosition=position
+                mainBinding.mainContent.text=""
+                toggleLayout(toogleFlag,mainBinding.mainDownBtn, mainBinding.layoutExpand)
                 Log.d("TAG", "onItemSelected: $position")
                 showSpherePanorama(Pair(intent.data, VrPanoramaView.Options()),converSampleImages[position])
                 mainBinding.mainSchoolTitle.text=title[position]
+
             }
         })
-        val dialog=MainOptionDialog(this,this)
+        mainBinding.mainDownBtn.setOnClickListener {
+            mainBinding.layoutExpand.setBackgroundColor(resources.getColor(android.R.color.transparent))
+            when(currentPosition){
+                0->{
+                    mainBinding.mainContent.text=BildingConstant.FRONT_DOOR
+                }
+                1->{
+                    mainBinding.mainContent.text=BildingConstant.FRONT
+                }
+                2->{
+                    mainBinding.mainContent.text=BildingConstant.AI_CENTER
+                }
+                3->{
+                    mainBinding.mainContent.text=BildingConstant.CHUNG_MU
+                }
+                4->{
+                    mainBinding.mainContent.text=BildingConstant.GWANG_GAE
+                }
+                5->{
+                    mainBinding.mainContent.text=BildingConstant.ZIP_HEON
+                }
+                6->{
+                    mainBinding.mainContent.text=BildingConstant.ZEOK_DOOR
+                }
+                7->{
+                    mainBinding.mainContent.text=BildingConstant.UJEONG
+                }
+                8->{
+                    mainBinding.mainContent.text=BildingConstant.SEJONG
+                }
+                9->{
+                    mainBinding.mainContent.text=BildingConstant.MOZA
+                }
+                10->{
+                    mainBinding.mainContent.text=BildingConstant.HAK_JEONG
+                }
+                11->{
+                    mainBinding.mainContent.text=BildingConstant.GUNJA
+                }
+                12->{
+                    mainBinding.mainContent.text=BildingConstant.EJIHEON
+                }
+                13->{
+                    mainBinding.mainContent.text=BildingConstant.EONGDEOK
+                }
+                14->{
+                    mainBinding.mainContent.text=BildingConstant.EDANG
+                }
+                15->{
+                    mainBinding.mainContent.text=BildingConstant.DASAN
+                }
+                16->{
+                    mainBinding.mainContent.text=BildingConstant.BACKDOOR
+                }
+                17->{
+                    mainBinding.mainContent.text=BildingConstant.GISUK
+                }
+            }
+            toggleLayout(!toogleFlag,it, mainBinding.layoutExpand)
+        }
 
+        val dialog=MainOptionDialog(this,this)
         mainBinding.mainHomeOption.setOnClickListener { //다이얼로그 키지않은상태
             if(flag2==0){
                 dialog.myDig()
@@ -71,6 +143,18 @@ class MainActivity : AppCompatActivity(), MainOptionClickInterface{
             }
 
         }
+    }
+    private fun toggleLayout(isExpanded: Boolean, view: View, layoutExpand: LinearLayout): Boolean {
+        // 2
+        ToggleAnimation.toggleArrow(view, isExpanded)
+        if (isExpanded) {
+            ToggleAnimation.expand(layoutExpand)
+            toogleFlag=true
+        } else {
+            ToggleAnimation.collapse(layoutExpand)
+            toogleFlag=false
+        }
+        return isExpanded
     }
     private fun panoramaMethod() {
         showSpherePanorama(Pair(intent.data, VrPanoramaView.Options()),converSampleImages[0])
@@ -117,7 +201,8 @@ class MainActivity : AppCompatActivity(), MainOptionClickInterface{
         }
         //세종맛집
         if(flag==3){
-
+            val intent= Intent(this,FoodActivity::class.java)
+            startActivity(intent)
         }
         //지도
         if(flag==4){
@@ -126,7 +211,7 @@ class MainActivity : AppCompatActivity(), MainOptionClickInterface{
         }
         //faq
         if(flag==5){
-            val intent= Intent(this,FaqActivity::class.java)
+            val intent= Intent(this, FaqActivity::class.java)
             startActivity(intent)
         }
         //오시는길

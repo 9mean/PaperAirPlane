@@ -1,4 +1,4 @@
-package com.example.paperairplane
+package com.example.paperairplane.adapter
 
 import android.content.Context
 import android.util.Log
@@ -8,13 +8,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.paperairplane.R
 
 class MainAdapter(private val context: Context, private val list: IntArray,private val title:ArrayList<String>): RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MainAdapter.ViewHolder {
+    ): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.school_list,parent,false)
         return ViewHolder(view)
     }

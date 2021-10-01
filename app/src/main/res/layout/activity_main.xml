@@ -14,22 +14,59 @@
         android:layout_height="match_parent"
         android:scrollbars="none" />
 
-    <ImageView
-        android:id="@+id/main_home_option"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
+    <RelativeLayout
+        android:id="@+id/main_up_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        android:src="@drawable/home_options" />
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/main_school_title"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"/>
+        <ImageView
+            android:id="@+id/main_home_option"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
 
+
+            android:src="@drawable/home_options" />
+
+        <TextView
+            android:id="@+id/main_school_title"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="애지헌"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/main_down_btn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/downbtn" />
+    </RelativeLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginBottom="100dp"
+        android:id="@+id/layout_expand"
+        android:layout_centerInParent="true"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/main_content"
+            android:textSize="13sp"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:text="답변"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
     <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"

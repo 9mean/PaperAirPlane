@@ -39,7 +39,7 @@
         android:background="@color/cardview_shadow_start_color"
         android:layout_gravity="center"
         android:layout_width="350dp"
-        android:layout_height="3dp"
+        android:layout_height="2dp"
         android:layout_marginTop="20dp"
        />
     <RelativeLayout
@@ -78,7 +78,7 @@
         android:background="@color/cardview_shadow_start_color"
         android:layout_gravity="center"
         android:layout_width="350dp"
-        android:layout_height="3dp"
+        android:layout_height="2dp"
         android:layout_marginTop="20dp"
         />
     <RelativeLayout
