@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StreetActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/street_back_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/leftbtn" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="찾아오시는길"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/street"
+        android:layout_width="350dp"
+        android:layout_height="250dp"/>
+    <View
+        android:background="@color/cardview_shadow_start_color"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="20dp"
+       />
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/green_bus"
+            android:src="@drawable/green_bus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/green_bus"
+            android:text="지하철(7호선)"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_toEndOf="@id/green_bus"
+            android:lineSpacingExtra="3dp"
+            android:text="2호선 건대입구 역이나\n5호선 군자역에서 환승 후,\n7호선 세종대역(어린이대공원역) 하차 후 6번 출구"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+    <View
+        android:background="@color/cardview_shadow_start_color"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="20dp"
+        />
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/blue_bus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/blue_bus" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/blue_bus"
+            android:text="시내버스"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/child_park"
+            android:textColor="@color/black"
+            android:text="어린이대공원"
+            android:src="@drawable/blue_bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:lineSpacingExtra="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/child_park"
+            android:text="파랑(간선) 721\n초록(지선) 119,3216,4212"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/hwang"
+            android:textColor="@color/black"
+            android:text="화양리"
+            android:src="@drawable/blue_bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:lineSpacingExtra="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@id/hwang"
+            android:text="파랑(간선) 240, 302\n초록(지선) 2222,3217,3220\n빨강(광역) 102\n초록(지선) 2012,2013"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+</LinearLayout>

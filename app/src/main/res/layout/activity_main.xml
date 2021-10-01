@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_relativelayout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <com.google.vr.sdk.widgets.pano.VrPanoramaView
+        android:id="@+id/vrPanoramaView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" />
+
+    <ImageView
+        android:id="@+id/main_home_option"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+
+        android:src="@drawable/home_options" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/main_school_title"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"/>
+
+    <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/carousel"/>
+</RelativeLayout>
